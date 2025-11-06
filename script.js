@@ -34,6 +34,44 @@ const cuisineGroups = {
     meng: ['CNNM']                                       // 蒙菜
   };
 
+// 数据：获取侧边栏元素
+const sidePanel = document.getElementById('sidePanel');
+const sideContent = document.getElementById('sideContent');
+
+// 数据：菜系信息
+const cuisineInfo = {
+    chuan: {
+      title: "川菜 · Chuan Cuisine",
+      desc: "起源四川、重庆地区，以麻、辣、鲜、香著称。代表菜有宫保鸡丁、水煮鱼、回锅肉。"
+    },
+    yue: {
+      title: "粤菜 · Yue Cuisine",
+      desc: "发源于广东、广西、海南，以清淡、鲜甜著称。代表菜有白切鸡、叉烧、虾饺。"
+    },
+    xiang: {
+      title: "湘菜 · Xiang Cuisine",
+      desc: "起源湖南，口味偏辣、酸香浓郁，代表菜有剁椒鱼头、毛氏红烧肉。"
+    },
+    // ... 其他菜系可继续添加
+  };
+
+  // 功能：显示侧边栏
+  function showCuisinePanel(cuisineKey) {
+    const info = cuisineInfo[cuisineKey];
+    if (!info) return; // 如果没有对应信息，退出
+  
+    // 填充内容
+    sideContent.innerHTML = `
+      <h2>${info.title}</h2>
+      <p>${info.desc}</p>
+    `;
+  
+    // 激活侧边栏
+    sidePanel.classList.add('active');
+  }
+
+
+
   // 功能：点击事件
 
   let currentCuisine = null;
@@ -50,7 +88,8 @@ const cuisineGroups = {
   
       // 事件：再次单击同省份
       if (currentCuisine === cuisine) {
-        paths.forEach(p => p.classList.remove('active'));
+        paths.forEach(p => p.classList.remove('active')); // 移除菜系区域包含省份的选中状态
+        sidePanel.classList.remove('active'); // 移除侧边栏
         currentCuisine = null;
         return;
       }
@@ -61,7 +100,14 @@ const cuisineGroups = {
         document.querySelector(`.sm_state_${code}`)?.classList.add('active');
       });
       currentCuisine = cuisine;
+      showCuisinePanel(cuisine); // 显示侧边栏
     });
   });
 
+  // 事件：单击空白处关闭侧边栏
+  document.addEventListener('click', e => {
+    if (!sidePanel.contains(e.target) && !e.target.closest('svg path')) {
+      sidePanel.classList.remove('active');
+    }
+  });
   
