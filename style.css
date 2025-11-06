@@ -1,4 +1,53 @@
-html {
-    height: 100%;
-    width: 100%;
+/* 全局 */
+html, body {
+  width: 100%;
+  height: 100%;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 容器:外层地图 */
+.country-map {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 30em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 地图背景色：浅牛皮纸底色 */
+  background-color: #f6e4c1;
+}
+
+/* 容器:内层地图 全屏显示 */
+.country-map-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Svg: 全屏显示 */
+svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* 省份颜色：内部填充&外部边框 */
+path {
+  fill: #d6b67a;
+  stroke: #f4dec0;
+  stroke-width: 0.6;
+}
+
+/* 交互：悬停高亮（省份） */
+path:hover {
+  fill: #c27c3f;
+}
+
