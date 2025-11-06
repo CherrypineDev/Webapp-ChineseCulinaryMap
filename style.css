@@ -51,3 +51,11 @@ path:hover {
   fill: #c27c3f;
 }
 
+/* 交互：单击高亮（菜系区域） */
+path.active {
+  fill: #c27c3f;
+  stroke: #a05b2a;
+  transition: fill 0.3s ease;
+}
+
+
