@@ -93,7 +93,7 @@ path.active {
   left: 0;
 }
 
-/* 容器：侧边栏内容淡入效果 */
+/* 动画：侧边栏内容淡入效果 */
 .side-content {
   opacity: 0;
   transform: translateX(-10px);
@@ -105,7 +105,7 @@ path.active {
   transform: translateX(0);
 }
 
-/* 侧边栏：一级标题、二级标题、段落 样式 */
+/* 内容：一级标题、二级标题、段落 样式 */
 .side-content h1 {
   margin-bottom: 0.3em;  /* h1 和 h2 之间的间距 */
   line-height: 1.2;      /* 控制标题内部行距 */
@@ -121,4 +121,26 @@ path.active {
 .side-content p {
   line-height: 1.8;      /* 段落内部行距 */
   margin-bottom: 1em;    /* 段落与下一个元素间距 */
+}
+
+
+/* 详情页跳转按钮 */
+
+/* 交互：按钮样式 */
+.cuisine-detail-btn {
+  display: inline-block;
+  margin-top: 1.5em;
+  padding: 0.8em 1.2em;
+  background-color: #7a5b3a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* 交互：悬停高亮 */
+.cuisine-detail-btn:hover {
+  background-color: #a06f44;
 }

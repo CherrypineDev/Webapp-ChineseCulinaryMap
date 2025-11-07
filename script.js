@@ -140,10 +140,22 @@ const cuisineInfo = {
         </li>
 
       </ul>
+
+      <button class="cuisine-detail-btn" data-cuisine="${cuisineKey}">
+        查看详细介绍 →
+      </button>
+
     `;
   
     // 激活侧边栏
     sidePanel.classList.add('active');
+  
+    const detailBtn = sideContent.querySelector('.cuisine-detail-btn');
+    detailBtn.addEventListener('click', () => {
+      // 跳转至对应菜系详情页
+      window.location.href = `cuisine_${cuisineKey}.html`;
+    });
+    
   }
 
 
