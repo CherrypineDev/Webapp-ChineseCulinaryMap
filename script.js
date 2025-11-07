@@ -34,6 +34,45 @@ const cuisineGroups = {
     meng: ['CNNM']                                       // 蒙菜
   };
 
+// 数据：省份代码对应表
+// 省份代码到中文名映射
+const provinceNames = {
+  CNBJ: "北京",
+  CNTJ: "天津",
+  CNHE: "河北",
+  CNSX: "山西",
+  CNCQ: "重庆",
+  CNJL: "吉林",
+  CNLN: "辽宁",
+  CNHL: "黑龙江",
+  CNJS: "江苏",
+  CNZJ: "浙江",
+  CNFJ: "福建",
+  CNHN: "湖南",
+  CNHB: "湖北",
+  CNGD: "广东",
+  CNGX: "广西",
+  CNSC: "四川",
+  CNGZ: "贵州",
+  CNYN: "云南",
+  CNXZ: "西藏",
+  CNSN: "陕西",
+  CNHA: "河南",
+  CNSH: "上海",
+  CNHI: "海南",
+  CNXJ: "新疆",
+  CNNX: "宁夏",
+  CNNM: "内蒙古",
+  CNQH: "青海",
+  CNGS: "甘肃",
+  CNSD: "山东",
+  CNJX: "江西",
+  CNAH: "安徽",
+  CNHK: "香港",
+  CNMC: "澳门",
+  CNTW: "台湾"
+};
+
 // 数据：获取侧边栏元素
 const sidePanel = document.getElementById('sidePanel');
 const sideContent = document.getElementById('sideContent');
@@ -41,8 +80,15 @@ const sideContent = document.getElementById('sideContent');
 // 数据：菜系信息
 const cuisineInfo = {
     chuan: {
-      title: "川菜 · Chuan Cuisine",
-      desc: "起源四川、重庆地区，以麻、辣、鲜、香著称。代表菜有宫保鸡丁、水煮鱼、回锅肉。"
+      title_cn: "川菜",
+      title_en: "Chuan Cuisine",
+      content_Origin:"QWQ",
+      content_Operation:"QWQ",
+      content_typicalCuisine:"QWQ",
+      // 代表菜系图片
+      content_Feature:"QWQ",
+      content_Culture:"QWQ",
+      content_Words:"QWQ",
     },
     yue: {
       title: "粤菜 · Yue Cuisine",
@@ -56,20 +102,49 @@ const cuisineInfo = {
   };
 
   // 功能：显示侧边栏
-  function showCuisinePanel(cuisineKey) {
+  function showCuisinePanel(cuisineKey, provinceCode) {
     const info = cuisineInfo[cuisineKey];
     if (!info) return; // 如果没有对应信息，退出
-  
+
+    const provinceName = provinceNames[provinceCode] || "未知省份";
+
     // 填充内容
     sideContent.innerHTML = `
-      <h2>${info.title}</h2>
-      <p>${info.desc}</p>
+      <h1>${info.title_cn}</h1>
+      <h2>${info.title_en}</h2>
+      <p>当前省份：${provinceName}</p>
+      <br>      
+      <ul>
+        <li>
+            <p>起源与分布：${info.content_Origin}</p>
+        </li>
+
+        <li>
+            <p>制作主要技法：${info.content_Operation}</p>
+        </li>
+
+        <li>
+            <p>代表菜肴：${info.content_typicalCuisine}</p>
+        </li>
+
+        <li>
+            <p>风味特点：${info.content_Feature}</p>
+        </li>
+
+        <li>
+            <p>文化印象：${info.content_Culture}</p>
+        </li>
+
+        <li>
+            <p>地方谚语：${info.content_Words}</p>
+        </li>
+
+      </ul>
     `;
   
     // 激活侧边栏
     sidePanel.classList.add('active');
   }
-
 
 
   // 功能：点击事件
@@ -100,7 +175,7 @@ const cuisineInfo = {
         document.querySelector(`.sm_state_${code}`)?.classList.add('active');
       });
       currentCuisine = cuisine;
-      showCuisinePanel(cuisine); // 显示侧边栏
+      showCuisinePanel(cuisine, province); // 显示侧边栏：传入菜系和省份
     });
   });
 
@@ -109,5 +184,4 @@ const cuisineInfo = {
     if (!sidePanel.contains(e.target) && !e.target.closest('svg path')) {
       sidePanel.classList.remove('active');
     }
-  });
-  
+  });  

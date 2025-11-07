@@ -19,7 +19,9 @@ html, body {
   box-sizing: border-box;
 }
 
-/* 容器:外层地图 */
+/* 首页地图 */
+
+/* 外层地图容器：尺寸、背景色 */
 .country-map {
   position: fixed;
   top: 0;
@@ -34,13 +36,13 @@ html, body {
   background-color: #f6e4c1;
 }
 
-/* 容器:内层地图 全屏显示 */
+/* 内层地图容器：全屏显示 */
 .country-map-container {
   width: 100%;
   height: 100%;
 }
 
-/* Svg: 全屏显示 */
+/* Svg容器：全屏显示 */
 svg {
   width: 100%;
   height: 100%;
@@ -67,7 +69,9 @@ path.active {
   transition: fill 0.3s ease;
 }
 
-/* 容器：侧边栏 */
+/* 侧边栏 */
+
+/* 侧边栏：固定在右侧，初始隐藏 */
 .side-bar {
   position: fixed;
   top: 0;
@@ -99,4 +103,22 @@ path.active {
 .side-bar.active .side-content {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* 侧边栏：一级标题、二级标题、段落 样式 */
+.side-content h1 {
+  margin-bottom: 0.3em;  /* h1 和 h2 之间的间距 */
+  line-height: 1.2;      /* 控制标题内部行距 */
+}
+
+.side-content h2 {
+  margin-bottom: 0.8em;  /* h2 和 p 之间的间距 */
+  line-height: 1.4;
+  color: #7a5b3a;        /* 可选：让英文副标题更淡一点 */
+  font-weight: normal;
+}
+
+.side-content p {
+  line-height: 1.8;      /* 段落内部行距 */
+  margin-bottom: 1em;    /* 段落与下一个元素间距 */
 }
