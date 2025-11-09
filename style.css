@@ -1,7 +1,7 @@
 /* 字体样式：声明与导入 */
 @font-face {
-  font-family: "AlimamaDongFangDaKai";
-  src: url("resources/font/AlimamaDongFangDaKai-Regular.ttf") format("truetype");
+  font-family: "LXGWWenKaiMono";
+  src: url("resources/font/LXGWWenKaiMono-Light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -10,7 +10,7 @@
 html, body {
   width: 100%;
   height: 100%;
-  font-family: "AlimamaDongFangDaKai", "Noto Serif SC", serif;
+  font-family: "LXGWWenKaiMono", "Noto Serif SC", serif;
 }
 
 * {
@@ -34,6 +34,8 @@ html, body {
   align-items: center;
   /* 地图背景色：浅牛皮纸底色 */
   background-color: #f6e4c1;
+  /* background-image: url("resources/picture/map-bg.png");
+  mix-blend-mode: multiply; */
 }
 
 /* 内层地图容器：全屏显示 */
