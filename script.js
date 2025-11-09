@@ -112,7 +112,7 @@ const cuisineInfo = {
     sideContent.innerHTML = `
       <h1>${info.title_cn}</h1>
       <h2>${info.title_en}</h2>
-      <p>当前省份：${provinceName}</p>
+      <p>当前选中：${provinceName}</p>
       <br>      
       <ul>
         <li>

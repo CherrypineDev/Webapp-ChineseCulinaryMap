@@ -7,6 +7,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "DunHuang";
+  src: url("resources/font/DunHuang.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* 全局 */
 html, body {
   width: 100%;
@@ -154,14 +162,25 @@ path.active {
   position: fixed;
   bottom: 2em;
   right: 2em;
-  width: 220px;
+  width: 180px;
   height: auto;
+  font-family: "DunHuang", "Noto Serif SC", serif;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-  background-color: #f6e4c1; /* 防止加载瞬间留白 */
+  background-color: #f5deb3; /* 防止加载瞬间留白 */
   z-index: 2;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mini-map-title {
+  background-color: transparent; /* 背景透明 */
+  color: #7a5b3a;                /* 文字颜色 */
+  font-size: 1em;              /* 字体大小可按需要调整 */
+  padding: 0.3em 0.8em;          /* 内边距（保持排版间距） */
+  text-align: center;            /* 文字居中 */
+  position: absolute;            /* 如果你想固定标题位置 */
+  bottom: 0.5em;
+  right: 0.5em;
 }
 
 .mini-map img {
@@ -174,15 +193,22 @@ path.active {
 }
 
 .page-title {
-  position: fixed;          /* 固定在页面左上角 */
-  top: 1em;
-  left: 5em;
-  font-size: 2em;
-  font-weight: bold;
-  color: #3a2a1a;           /* 深棕色文字，与牛皮纸风格协调 */
-  padding: 0.4em 0.8em;
+  position: fixed;
+  width: 2em;
+  height: 100%;
+  top: 5px;
+  left: 5px;
+  background-color: #7a5b3a;
+  writing-mode: vertical-rl;      /* 设置竖排，从上到下，从右到左 */
+  text-orientation: upright;      /* 让文字竖直显示（而不是旋转） */
+  font-family: "DunHuang", "Noto Serif SC", serif;
+  font-size: 3em;
+  color: #fff;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   border-radius: 6px;
-  letter-spacing: 0.08em;   /* 稍微拉开字距 */
-  z-index: 2;             /* 确保在地图上层显示 */
-  user-select: none;        /* 禁止误选中 */
+  letter-spacing: 0.1em;
+  z-index: 2;
+  user-select: none;
 }
