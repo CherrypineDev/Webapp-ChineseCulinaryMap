@@ -1,9 +1,10 @@
 /* 引入首页字体样式保持统一 */
 @font-face {
     font-family: "LXGWWenKaiMono";
-    src: url("resources/font/LXGWWenKaiMono-Light.ttf") format("truetype");
+    src: url("resources/font/LXGWWenKaiMono-Light.woff2") format("truetype");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
   }
   
   /* 全局样式 */

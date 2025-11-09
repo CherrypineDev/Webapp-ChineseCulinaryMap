@@ -1,9 +1,10 @@
 /* 字体样式：声明与导入 */
 @font-face {
   font-family: "LXGWWenKaiMono";
-  src: url("resources/font/LXGWWenKaiMono-Light.ttf") format("truetype");
+  src: url("resources/font/LXGWWenKaiMono-Light.woff2") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 /* 全局 */
@@ -87,7 +88,7 @@ path.active {
   overflow-y: auto;
   box-shadow: 3px 0 6px rgba(0,0,0,0.15);
   transition: left 600ms cubic-bezier(0.77, 0, 0.18, 1);
-  z-index: 10;
+  z-index: 3;
 }
 
 /* 交互：当激活时滑出 */
@@ -145,4 +146,43 @@ path.active {
 /* 交互：悬停高亮 */
 .cuisine-detail-btn:hover {
   background-color: #a06f44;
+}
+
+/* 地图缩略图 */
+
+.mini-map {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  width: 220px;
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  background-color: #f6e4c1; /* 防止加载瞬间留白 */
+  z-index: 2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mini-map img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.9) sepia(60%) hue-rotate(10deg) saturate(140%);
+  mix-blend-mode: multiply; /* 与背景颜色融合 */
+  opacity: 0.95;
+}
+
+.page-title {
+  position: fixed;          /* 固定在页面左上角 */
+  top: 1em;
+  left: 5em;
+  font-size: 2em;
+  font-weight: bold;
+  color: #3a2a1a;           /* 深棕色文字，与牛皮纸风格协调 */
+  padding: 0.4em 0.8em;
+  border-radius: 6px;
+  letter-spacing: 0.08em;   /* 稍微拉开字距 */
+  z-index: 2;             /* 确保在地图上层显示 */
+  user-select: none;        /* 禁止误选中 */
 }
