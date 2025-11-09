@@ -35,7 +35,6 @@ const cuisineGroups = {
   };
 
 // 数据：省份代码对应表
-// 省份代码到中文名映射
 const provinceNames = {
   CNBJ: "北京",
   CNTJ: "天津",
@@ -197,3 +196,24 @@ const cuisineInfo = {
       sidePanel.classList.remove('active');
     }
   });  
+
+
+const hoverInfo = document.getElementById('hoverInfo');
+
+paths.forEach(path => {
+  // 获取省份代码
+  const province = path.dataset.province;
+
+  path.addEventListener('mouseenter', () => {
+    // 获取省份中文名称（需要一个映射表）
+    const provinceName = provinceNames[province] || '未知地区';
+    hoverInfo.textContent = `当前光标浮于：${provinceName}`;
+  });
+
+  path.addEventListener('mouseleave', () => {
+    hoverInfo.textContent = '当前光标浮于：无';
+  });
+});
+
+
+

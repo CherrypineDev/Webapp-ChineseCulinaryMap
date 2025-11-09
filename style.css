@@ -212,3 +212,15 @@ path.active {
   z-index: 2;
   user-select: none;
 }
+
+.hover-info {
+  position: fixed;
+  top: 1em;
+  right: 1.5em;
+  color: #7a5b3a;
+  font-family: "DunHuang", "Noto Serif SC", serif;
+  font-size: 1.1em;
+  padding: 0.5em 0.8em;
+  border-radius: 6px;
+  z-index: 3;
+}
