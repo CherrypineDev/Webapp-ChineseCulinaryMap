@@ -89,14 +89,54 @@ const cuisineInfo = {
       content_Culture:"QWQ",
       content_Words:"QWQ",
     },
+
     yue: {
-      title: "粤菜 · Yue Cuisine",
-      desc: "发源于广东、广西、海南，以清淡、鲜甜著称。代表菜有白切鸡、叉烧、虾饺。"
+      title_cn: "粤菜",
+      title_en: "Yue Cuisine",
+      content_Origin:"广东",
+      content_Operation:"QWQ",
+      content_typicalCuisine:"QWQ",
+      // 代表菜系图片
+      content_Feature:"QWQ",
+      content_Culture:"QWQ",
+      content_Words:"QWQ",
     },
-    xiang: {
-      title: "湘菜 · Xiang Cuisine",
-      desc: "起源湖南，口味偏辣、酸香浓郁，代表菜有剁椒鱼头、毛氏红烧肉。"
+
+    chuan: {
+      title_cn: "川菜",
+      title_en: "Chuan Cuisine",
+      content_Origin:"QWQ",
+      content_Operation:"QWQ",
+      content_typicalCuisine:"QWQ",
+      // 代表菜系图片
+      content_Feature:"QWQ",
+      content_Culture:"QWQ",
+      content_Words:"QWQ",
     },
+
+    chuan: {
+      title_cn: "川菜",
+      title_en: "Chuan Cuisine",
+      content_Origin:"QWQ",
+      content_Operation:"QWQ",
+      content_typicalCuisine:"QWQ",
+      // 代表菜系图片
+      content_Feature:"QWQ",
+      content_Culture:"QWQ",
+      content_Words:"QWQ",
+    },
+
+    chuan: {
+      title_cn: "川菜",
+      title_en: "Chuan Cuisine",
+      content_Origin:"QWQ",
+      content_Operation:"QWQ",
+      content_typicalCuisine:"QWQ",
+      // 代表菜系图片
+      content_Feature:"QWQ",
+      content_Culture:"QWQ",
+      content_Words:"QWQ",
+    }
     // ... 其他菜系可继续添加
   };
 
