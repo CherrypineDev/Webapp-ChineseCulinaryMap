@@ -102,9 +102,9 @@ const cuisineInfo = {
       content_Words:"QWQ",
     },
 
-    chuan: {
-      title_cn: "川菜",
-      title_en: "Chuan Cuisine",
+    huaiyang: {
+      title_cn: "淮阳菜",
+      title_en: "HuaiYang Cuisine",
       content_Origin:"QWQ",
       content_Operation:"QWQ",
       content_typicalCuisine:"QWQ",
