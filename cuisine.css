@@ -206,3 +206,24 @@
     margin-top: 0.6em;
   }
   
+/* 播放按钮 */
+#audioBtn, #playBtn {
+    background-color: #e7d5aa;   /* 浅棕底色，与网页统一 */
+    border: 1px solid #c27c3f;   /* 深棕边框 */
+    border-radius: 8px;           /* 圆角 */
+    padding: 0.6em 1.2em;
+    font-weight: 600;
+    color: #7a5b3a;               /* 深棕文字 */
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 轻微阴影 */
+    transition: all 0.2s ease;
+    font-family: "LXGWWenKaiMono", "Noto Serif SC", serif;
+    font-size: 1em;
+}
+
+/* 悬浮效果 */
+#audioBtn:hover, #playBtn:hover {
+    background-color: #f3e2bb;   /* 浅色高亮 */
+    transform: translateY(-2px);
+    color: #3a2a1a;              /* 字体颜色稍深 */
+}
